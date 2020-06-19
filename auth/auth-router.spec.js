@@ -13,17 +13,17 @@ describe("auth-router.js", () => {
         await db("users").truncate();
     });
 
-    describe("GET /", () => {
-        it("should return 200 OK", () => {
-            return supertest(authRouter)
-                .get("/")
-                .then(res => {
-                    // jest assertion
-                    expect(res.status).toEqual(200);
-                });
-                // .then(res => expect(200).toBe(200));
-                // .then(res => { expect(200)});
-        });
+    // describe("GET /", () => {
+    //     it("should return 200 OK", () => {
+    //         return supertest(authRouter)
+    //             .get("/")
+    //             .then(res => {
+    //                 // jest assertion
+    //                 expect(res.status).toEqual(200);
+    //             });
+    //             // .then(res => expect(200).toBe(200));
+    //             // .then(res => { expect(200)});
+    //     });
 
         // it("should return api: up up and away", () => {
         //     return supertest(authRouter)
@@ -42,8 +42,8 @@ describe("auth-router.js", () => {
         //             // jest assertion
         //             expect(res.type).toMatch(/json/i);
         //         });
-        // });
-    });
+    //     // });
+    // });
 
     // describe("Post", function() {
     //     it("Should return an OK status to the post route", function() {
@@ -90,21 +90,32 @@ describe("auth-router.js", () => {
         })
     });
 
-    // describe("POST /login", () => {
-    //     const username = "philly";
-    //     const password = "123philly";
+    describe("POST /login", () => {
+        // const username = "philly";
+        // const password = "123philly";
 
-    //     it("should return 201 created", () => {
-    //         return supertest(authRouter)
-    //             .post("/login")
-    //             .send({ username, password })
-    //             .then(res => {
-    //                 expect(res.body.username).toBe(username);
-    //                 expect(res.body.password).toBe(password);
-    //             })
-    //             // .catch(err => {
+        // it("should return 201 created", () => {
+        //     return supertest(authRouter)
+        //         .post("/login")
+        //         .send({ username, password })
+        //         .then(res => {
+        //             expect(res.body.username).toBe(username);
+        //             expect(res.body.password).toBe(password);
+        //         })
+        //         // .catch(err => {
 
-    //             // })
-    //     })
-    // })
+        //         // })
+        // })
+
+        it("should login user", function() {
+            const expectedStatusCode = 200;
+
+            supertest(authRouter)
+                .post("/login")
+                .send({ name: "test", password: "pass" })
+
+            expect(expectedStatusCode);
+
+        })
+    })
 })
