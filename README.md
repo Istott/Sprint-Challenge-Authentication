@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] What is the purpose of using _sessions_?
 
+1. sessions are used for credential authentication through the browser using cookies
+
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+
+2. bcrypt is a library that hashes passwords in almost impossible hackable strings.
 
 - [ ] What does bcrypt do to slow down attackers?
 
+3. by hashing the passwords into random strings, its makes it very hard for the hacker to decode and connect it to the actual password
+
 - [ ] What are the three parts of the JSON Web Token?
+
+4. the header, the payload, and the signature
 
 ## Minimum Viable Product
 
