@@ -19,6 +19,10 @@ const Users = require("../users/users-model.js");
 const { isValid } = require("../users/users-service.js");
 const constants = require("../database/dbConfig.js");
 
+router.get("/", (req, res) => {
+  res.status(200).json({ api: "up up and away" });
+});
+
 router.post("/register", (req, res) => {
     const credentials = req.body;
 
